@@ -1,6 +1,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar {
@@ -29,13 +31,13 @@ body {
     display: block;
     padding: 80px;
     text-align: center;
-    background: rgb(47, 255, 120);
+    background: rgb(11, 239, 212);
     color: white;
 }
 
 .card {
     display: block;
-    max-width: 400px;
+    /*max-width: 400px;*/
     padding: 20px;
     margin: 20px;
 }
@@ -43,4 +45,20 @@ body {
 .card img {
     width: 100%;
     height: auto;
+}
+
+/*.footer{  
+    position: fixed;
+    bottom: 0;
+    left: 0;  
+    width: 100%;    
+    padding: 10px;
+    background: rgb(67, 45, 65);
+}*/
+.footer{  
+   display: block;
+    width: 100%;    
+    margin: 0;
+    padding: 20px;
+    background: rgb(67, 45, 65);
 }
