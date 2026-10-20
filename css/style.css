@@ -42,7 +42,6 @@ body {
 
 .card {
     display: block;
-    /*max-width: 400px;*/
     padding: 20px;
     margin: 20px;
 }
@@ -53,14 +52,7 @@ body {
     padding: 70px;
 }
 
-/*.footer{  
-    position: fixed;
-    bottom: 0;
-    left: 0;  
-    width: 100%;    
-    padding: 10px;
-    background: rgb(67, 45, 65);
-}*/
+
 .footer{  
    display: block;
     width: 100%;    
@@ -69,9 +61,7 @@ body {
     background: rgb(67, 45, 65);
 }
 
-/* Page Catalogue d'activites (etape 6 - CSS)
-   Tout est place sous #catalogue pour ne pas changer les autres pages  */
-
+/* Page Catalogue d'activites, tout est place sous #catalogue pour ne pas changer les autres pages */
 /* fond blanc pour que le texte reste lisible meme si le navigateur est en mode sombre */
 body {
     background-color: white;
@@ -157,10 +147,6 @@ body {
     background-color: #fafafa;
 }
 
-.carte:hover {
-    border-color: #339;
-}
-
 .carte img {
     width: 100%;
     height: 150px;
@@ -171,15 +157,6 @@ body {
 .carte h4 {
     margin: 10px 0 5px 0;
     font-size: 1.2rem;
-}
-
-/* universitaire = bordure bleue, parauniversitaire = bordure verte */
-.carte.universitaire {
-    border-left: 8px solid #339;
-}
-
-.carte.parauniversitaire {
-    border-left: 8px solid seagreen;
 }
 
 p.type {
