@@ -69,10 +69,8 @@ body {
     background: rgb(67, 45, 65);
 }
 
-/* ==========================================================================
-   Page Catalogue d'activites (etape 6 - CSS)
-   Tout est place sous #catalogue pour ne pas changer les autres pages
-   ========================================================================== */
+/* Page Catalogue d'activites (etape 6 - CSS)
+   Tout est place sous #catalogue pour ne pas changer les autres pages  */
 
 /* fond blanc pour que le texte reste lisible meme si le navigateur est en mode sombre */
 body {
@@ -111,7 +109,7 @@ body {
     margin-top: 40px;
 }
 
-/* ---------- Tableau ---------- */
+/* Tableau */
 
 #resume table {
     width: 100%;
@@ -139,7 +137,7 @@ body {
     background-color: antiquewhite;
 }
 
-/* ---------- Cartes des activites ---------- */
+/* Cartes des activites */
 
 #liste-activites {
     display: flex;
@@ -202,7 +200,7 @@ p.type {
     font-weight: bold;
 }
 
-/* ---------- Boutons ---------- */
+/* Boutons */
 
 .btn {
     display: inline-block;
@@ -232,7 +230,7 @@ p.type {
     border-color: rgb(59, 59, 59);
 }
 
-/* ---------- Formulaire ---------- */
+/* Formulaire */
 
 #inscription form {
     max-width: 600px;
@@ -296,7 +294,7 @@ p.type {
     outline: 2px solid rgb(11, 239, 212);
 }
 
-/* ---------- Divers ---------- */
+/* Divers */
 
 #catalogue a {
     color: #339;
