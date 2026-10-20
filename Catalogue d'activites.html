@@ -1,44 +1,232 @@
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Catalogue complet des activités étudiantes : recherche, filtres par catégorie et tri.">
     <title>Catalogue des activités — Campus Hub</title>
     <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="header">
+
+    <!-- En-tete du site -->
+    <header class="header">
         <h1>Bienvenue sur le site du Campus Hub</h1>
         <div class="card">
-            <img src="images/CampusHub.jpeg" alt="logo campus">
-            </di>
+            <img src="images/CampusHub.jpeg" alt="Logo du Campus Hub">
             <br>
-            <label><center>Recherche
-                <cente><input type="text" placeholder="CampusHub"> </center>
-            </label>
+            <label for="recherche">Recherche</label>
+            <input type="text" id="recherche" placeholder="CampusHub">
         </div>
+    </header>
 
+    <!-- Menu de navigation -->
+    <nav class="navbar">
+        <a href="index.html">Accueil</a>
+        <a href="activite.html">Activites</a>
+        <a href="Catalogue d'activites.html" class="active">Catalogue</a>
+        <a href="inscription.html">Inscription</a>
+        <a href="gestion.html">Gestion</a>
+    </nav>
 
-        <div class="navbar">
-            <a href="index.html" class="active">Accueil</a>
-            <a href="activite.html">Activites</a>
-            <a href="Catalogue d'activites.html">Catalogue</a>
-            <a href="inscription.html">Inscription</a>
-            <a href="gestion.html">Gestion</a>
-        </div>
-        <div class="main">
-            <h2>Catalogue d'activites a faire </h2>
+    <main id="catalogue">
 
-            
+        <h2>Catalogue d'activités</h2>
+        <p class="intro">Voici les activités offertes ce trimestre au Campus Hub. Il y a des activités universitaires (liées aux cours) et parauniversitaires (sport, culture, vie étudiante). Pour participer, choisis une activité et remplis le <a href="#inscription">formulaire d'inscription</a> en bas de la page.</p>
 
-        <div class="footer">
-            <h3>Campus Hub</h3>
-            <p>3351, boulevard des Forges,Trois-Rivières (Québec) G8Z 4M3 Téléphone : 819 376-5011
-            </p>
-        </div>
-              
+        <!-- Tableau resume des activites -->
+        <section id="resume">
+            <h3>Résumé des activités</h3>
+            <table>
+                <caption>Activités du trimestre d'automne 2026</caption>
+                <tr>
+                    <th>Activité</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Lieu</th>
+                    <th>Places</th>
+                </tr>
+                <tr>
+                    <td><a href="#act-conference">Conférence : l'IA en éducation</a></td>
+                    <td>Universitaire</td>
+                    <td>29 octobre 2026</td>
+                    <td>Pavillon Ringuet, salle 1012</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td><a href="#act-atelier">Atelier CV et entrevue</a></td>
+                    <td>Universitaire</td>
+                    <td>5 novembre 2026</td>
+                    <td>Pavillon Albert-Tessier</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td><a href="#act-soccer">Tournoi de soccer intérieur</a></td>
+                    <td>Parauniversitaire</td>
+                    <td>8 novembre 2026</td>
+                    <td>CAPS (gymnase)</td>
+                    <td>48</td>
+                </tr>
+                <tr>
+                    <td><a href="#act-culture">Soirée culturelle internationale</a></td>
+                    <td>Parauniversitaire</td>
+                    <td>14 novembre 2026</td>
+                    <td>Café étudiant</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td><a href="#act-benevolat">Collecte de denrées (bénévolat)</a></td>
+                    <td>Parauniversitaire</td>
+                    <td>21 novembre 2026</td>
+                    <td>Hall principal</td>
+                    <td>30</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Les cartes des activites -->
+        <section id="liste-activites">
+            <h3>Détail des activités</h3>
+
+            <article class="carte universitaire" id="act-conference">
+                <img src="images/conference.svg" alt="Illustration d'une conférence">
+                <h4>Conférence : l'IA en éducation</h4>
+                <p class="type">Universitaire</p>
+                <p>Une professeure du département d'informatique vient parler de l'intelligence artificielle et de comment elle change notre façon d'étudier.</p>
+                <ul>
+                    <li><span class="etiquette">Date :</span> 29 octobre 2026, 13 h 30</li>
+                    <li><span class="etiquette">Lieu :</span> Pavillon Ringuet, salle 1012</li>
+                    <li><span class="etiquette">Prix :</span> Gratuit</li>
+                </ul>
+                <a href="#inscription" class="btn">S'inscrire</a>
+            </article>
+
+            <article class="carte universitaire" id="act-atelier">
+                <img src="images/atelier.svg" alt="Illustration d'un atelier en petit groupe">
+                <h4>Atelier CV et entrevue</h4>
+                <p class="type">Universitaire</p>
+                <p>Atelier pratique avec le service de placement pour améliorer ton CV et te préparer à une entrevue de stage.</p>
+                <ul>
+                    <li><span class="etiquette">Date :</span> 5 novembre 2026, 12 h</li>
+                    <li><span class="etiquette">Lieu :</span> Pavillon Albert-Tessier</li>
+                    <li><span class="etiquette">Prix :</span> Gratuit</li>
+                </ul>
+                <a href="#inscription" class="btn">S'inscrire</a>
+            </article>
+
+            <article class="carte parauniversitaire" id="act-soccer">
+                <img src="images/sport.svg" alt="Illustration d'un ballon et d'activités sportives">
+                <h4>Tournoi de soccer intérieur</h4>
+                <p class="type">Parauniversitaire</p>
+                <p>Forme ton équipe ou inscris-toi seul, on va te placer dans une équipe. Tous les niveaux sont acceptés.</p>
+                <ul>
+                    <li><span class="etiquette">Date :</span> 8 novembre 2026, 9 h</li>
+                    <li><span class="etiquette">Lieu :</span> CAPS (gymnase)</li>
+                    <li><span class="etiquette">Prix :</span> 5 $</li>
+                </ul>
+                <a href="#inscription" class="btn">S'inscrire</a>
+            </article>
+
+            <article class="carte parauniversitaire" id="act-culture">
+                <img src="images/culture.svg" alt="Illustration d'une activité culturelle">
+                <h4>Soirée culturelle internationale</h4>
+                <p class="type">Parauniversitaire</p>
+                <p>Musique, danse et nourriture de plusieurs pays, préparées par les associations étudiantes internationales.</p>
+                <ul>
+                    <li><span class="etiquette">Date :</span> 14 novembre 2026, 18 h</li>
+                    <li><span class="etiquette">Lieu :</span> Café étudiant</li>
+                    <li><span class="etiquette">Prix :</span> 10 $ (repas inclus)</li>
+                </ul>
+                <a href="#inscription" class="btn">S'inscrire</a>
+            </article>
+
+            <article class="carte parauniversitaire" id="act-benevolat">
+                <img src="images/associatif.svg" alt="Illustration de personnes qui s'entraident">
+                <h4>Collecte de denrées (bénévolat)</h4>
+                <p class="type">Parauniversitaire</p>
+                <p>Aide l'association étudiante à ramasser des denrées pour la banque alimentaire du campus.</p>
+                <ul>
+                    <li><span class="etiquette">Date :</span> 21 novembre 2026, 10 h</li>
+                    <li><span class="etiquette">Lieu :</span> Hall principal</li>
+                    <li><span class="etiquette">Prix :</span> Gratuit</li>
+                </ul>
+                <a href="#inscription" class="btn">S'inscrire</a>
+            </article>
+        </section>
+
+        <!-- Formulaire d'inscription -->
+        <section id="inscription">
+            <h3>Inscription à une activité</h3>
+            <p>Les champs avec une * sont obligatoires.</p>
+
+            <form action="#inscription" method="post">
+
+                <fieldset>
+                    <legend>Tes informations</legend>
+
+                    <label for="nom">Nom *</label>
+                    <input type="text" id="nom" name="nom" placeholder="Ex. : Tremblay" maxlength="40" required>
+
+                    <label for="prenom">Prénom *</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Ex. : Awa" maxlength="40" required>
+
+                    <label for="courriel">Courriel *</label>
+                    <input type="email" id="courriel" name="courriel" placeholder="prenom.nom@uqtr.ca" required>
+
+                    <label for="programme">Programme d'études</label>
+                    <select id="programme" name="programme">
+                        <option value="">-- Choisir --</option>
+                        <option value="informatique">Informatique</option>
+                        <option value="genie">Génie</option>
+                        <option value="administration">Administration</option>
+                        <option value="sciences">Sciences de la santé</option>
+                        <option value="autre">Autre</option>
+                    </select>
+
+                    <label for="session">Nombre de sessions complétées</label>
+                    <input type="number" id="session" name="session" min="0" max="12" value="0">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Ton activité</legend>
+
+                    <label for="activite">Activité choisie *</label>
+                    <select id="activite" name="activite" required>
+                        <option value="">-- Choisir une activité --</option>
+                        <option value="conference">Conférence : l'IA en éducation</option>
+                        <option value="atelier">Atelier CV et entrevue</option>
+                        <option value="soccer">Tournoi de soccer intérieur</option>
+                        <option value="culture">Soirée culturelle internationale</option>
+                        <option value="benevolat">Collecte de denrées (bénévolat)</option>
+                    </select>
+
+                    <p class="question">Tu participes comment ? *</p>
+                    <input type="radio" id="seul" name="participation" value="seul" required>
+                    <label for="seul" class="choix">Seul(e)</label>
+                    <input type="radio" id="groupe" name="participation" value="groupe">
+                    <label for="groupe" class="choix">Avec des amis</label>
+
+                    <p class="question">Tu veux recevoir :</p>
+                    <input type="checkbox" id="rappel" name="preferences" value="rappel">
+                    <label for="rappel" class="choix">Un rappel par courriel</label>
+                    <input type="checkbox" id="infolettre" name="preferences" value="infolettre">
+                    <label for="infolettre" class="choix">L'infolettre du Campus Hub</label>
+
+                    <label for="commentaire">Commentaire ou besoin particulier</label>
+                    <textarea id="commentaire" name="commentaire" rows="4" maxlength="300" placeholder="Allergies, accessibilité, questions..."></textarea>
+                </fieldset>
+
+                <button type="submit" class="btn primaire">M'inscrire</button>
+                <button type="reset" class="btn">Effacer</button>
+            </form>
+        </section>
+
+        <p class="retour"><a href="#catalogue">Retour en haut</a></p>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <h3>Campus Hub</h3>
+        <p>3351, boulevard des Forges, Trois-Rivières (Québec) G8Z 4M3 Téléphone : 819 376-5011</p>
+    </footer>
 
 </body>
 </html>

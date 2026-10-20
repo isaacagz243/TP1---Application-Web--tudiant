@@ -68,3 +68,253 @@ body {
     padding: 20px;
     background: rgb(67, 45, 65);
 }
+
+/* ==========================================================================
+   Page Catalogue d'activites (etape 6 - CSS)
+   Tout est place sous #catalogue pour ne pas changer les autres pages
+   ========================================================================== */
+
+/* fond blanc pour que le texte reste lisible meme si le navigateur est en mode sombre */
+body {
+    background-color: white;
+}
+
+#catalogue,
+#catalogue * {
+    box-sizing: border-box;
+}
+
+#catalogue {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.5;
+}
+
+#catalogue h2 {
+    color: #339;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* le paragraphe juste apres le titre */
+#catalogue h2 + p {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+#catalogue h3 {
+    color: rgb(67, 45, 65);
+    border-bottom: 3px solid rgb(11, 239, 212);
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+/* ---------- Tableau ---------- */
+
+#resume table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+#resume caption {
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+#resume th {
+    background-color: #339;
+    color: white;
+    padding: 10px;
+}
+
+#resume td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+#resume tr:hover {
+    background-color: antiquewhite;
+}
+
+/* ---------- Cartes des activites ---------- */
+
+#liste-activites {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#liste-activites > h3 {
+    width: 100%;
+}
+
+.carte {
+    width: 300px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+}
+
+.carte:hover {
+    border-color: #339;
+}
+
+.carte img {
+    width: 100%;
+    height: 150px;
+    background-color: hsl(175, 80%, 90%);
+    border-radius: 6px;
+}
+
+.carte h4 {
+    margin: 10px 0 5px 0;
+    font-size: 1.2rem;
+}
+
+/* universitaire = bordure bleue, parauniversitaire = bordure verte */
+.carte.universitaire {
+    border-left: 8px solid #339;
+}
+
+.carte.parauniversitaire {
+    border-left: 8px solid seagreen;
+}
+
+p.type {
+    display: inline-block;
+    margin: 0;
+    padding: 2px 8px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 4px;
+    background-color: #eee;
+}
+
+.carte ul {
+    padding-left: 20px;
+}
+
+.carte li .etiquette {
+    font-weight: bold;
+}
+
+/* ---------- Boutons ---------- */
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 10px;
+    border: 2px solid #339;
+    border-radius: 5px;
+    background-color: white;
+    color: #339;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #339;
+    color: white;
+}
+
+.btn.primaire {
+    background-color: #339;
+    color: white;
+}
+
+.btn.primaire:hover {
+    background-color: rgb(59, 59, 59);
+    border-color: rgb(59, 59, 59);
+}
+
+/* ---------- Formulaire ---------- */
+
+#inscription form {
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fdfdf0;
+}
+
+#inscription fieldset {
+    margin-bottom: 20px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+}
+
+#inscription legend {
+    font-weight: bold;
+    color: #339;
+    padding: 0 5px;
+}
+
+#inscription label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* les labels a cote des radio et checkbox restent sur la meme ligne */
+#inscription label.choix {
+    display: inline;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+#inscription p.question {
+    margin: 15px 0 5px 0;
+    font-weight: bold;
+}
+
+#inscription input[type="text"],
+#inscription input[type="email"],
+#inscription input[type="number"],
+#inscription select,
+#inscription textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#inscription input[type="email"] {
+    border: 2px solid navy;
+}
+
+#inscription input:focus,
+#inscription select:focus,
+#inscription textarea:focus {
+    outline: 2px solid rgb(11, 239, 212);
+}
+
+/* ---------- Divers ---------- */
+
+#catalogue a {
+    color: #339;
+}
+
+#catalogue a.btn {
+    color: #339;
+}
+
+#catalogue a.btn:hover {
+    color: white;
+}
+
+.retour {
+    text-align: right;
+}
+
+/* le footer de cette page (balise footer) depassait a cause du padding */
+footer.footer {
+    box-sizing: border-box;
+}
