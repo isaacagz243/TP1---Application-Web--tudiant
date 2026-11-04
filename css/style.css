@@ -42,14 +42,14 @@ body {
 
 .card {
     display: block;
-    padding: 20px;
-    margin: 20px;
+    padding: 5px;
+    margin: 5px;
 }
 
 .card img {
-    width: 20%;
+    width: 10%;
     height: auto;
-    padding: 70px;
+    padding: 10px;
 }
 
 
