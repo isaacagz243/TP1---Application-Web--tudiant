@@ -29,7 +29,7 @@
     <main id="catalogue">
 
         <h2>Catalogue d'activités</h2>
-        <p class="intro">Voici les activités offertes ce trimestre au Campus Hub. Il y a des activités universitaires (liées aux cours) et parauniversitaires (sport, culture, vie étudiante). Pour participer, choisis une activité et remplis le <a href="#inscription">formulaire d'inscription</a> en bas de la page.</p>
+        <p class="intro">Voici les activités offertes ce trimestre au Campus Hub. Il y a des activités universitaires (liées aux cours) et parauniversitaires (sport, culture, vie étudiante). Pour participer, choisis une activité et remplis le <a href="inscription.html">formulaire d'inscription</a>.</p>
 
         <!-- Tableau resume des activites -->
         <section id="resume">
@@ -97,7 +97,7 @@
                     <li><span class="etiquette">Lieu :</span> Pavillon Ringuet, salle 1012</li>
                     <li><span class="etiquette">Prix :</span> Gratuit</li>
                 </ul>
-                <a href="#inscription" class="btn">S'inscrire</a>
+                <a href="inscription.html" class="btn">S'inscrire</a>
             </article>
 
             <article class="carte universitaire" id="act-atelier">
@@ -110,7 +110,7 @@
                     <li><span class="etiquette">Lieu :</span> Pavillon Albert-Tessier</li>
                     <li><span class="etiquette">Prix :</span> Gratuit</li>
                 </ul>
-                <a href="#inscription" class="btn">S'inscrire</a>
+                <a href="inscription.html" class="btn">S'inscrire</a>
             </article>
 
             <article class="carte parauniversitaire" id="act-soccer">
@@ -123,7 +123,7 @@
                     <li><span class="etiquette">Lieu :</span> CAPS (gymnase)</li>
                     <li><span class="etiquette">Prix :</span> 5 $</li>
                 </ul>
-                <a href="#inscription" class="btn">S'inscrire</a>
+                <a href="inscription.html" class="btn">S'inscrire</a>
             </article>
 
             <article class="carte parauniversitaire" id="act-culture">
@@ -136,7 +136,7 @@
                     <li><span class="etiquette">Lieu :</span> Café étudiant</li>
                     <li><span class="etiquette">Prix :</span> 10 $ (repas inclus)</li>
                 </ul>
-                <a href="#inscription" class="btn">S'inscrire</a>
+                <a href="inscription.html" class="btn">S'inscrire</a>
             </article>
 
             <article class="carte parauniversitaire" id="act-benevolat">
@@ -149,75 +149,8 @@
                     <li><span class="etiquette">Lieu :</span> Hall principal</li>
                     <li><span class="etiquette">Prix :</span> Gratuit</li>
                 </ul>
-                <a href="#inscription" class="btn">S'inscrire</a>
+                <a href="inscription.html" class="btn">S'inscrire</a>
             </article>
-        </section>
-
-        <!-- Formulaire d'inscription -->
-        <section id="inscription">
-            <h3>Inscription à une activité</h3>
-            <p>Les champs avec une * sont obligatoires.</p>
-
-            <form action="#inscription" method="post">
-
-                <fieldset>
-                    <legend>Tes informations</legend>
-
-                    <label for="nom">Nom *</label>
-                    <input type="text" id="nom" name="nom" placeholder="Ex. : Tremblay" maxlength="40" required>
-
-                    <label for="prenom">Prénom *</label>
-                    <input type="text" id="prenom" name="prenom" placeholder="Ex. : Awa" maxlength="40" required>
-
-                    <label for="courriel">Courriel *</label>
-                    <input type="email" id="courriel" name="courriel" placeholder="prenom.nom@uqtr.ca" required>
-
-                    <label for="programme">Programme d'études</label>
-                    <select id="programme" name="programme">
-                        <option value="">-- Choisir --</option>
-                        <option value="informatique">Informatique</option>
-                        <option value="genie">Génie</option>
-                        <option value="administration">Administration</option>
-                        <option value="sciences">Sciences de la santé</option>
-                        <option value="autre">Autre</option>
-                    </select>
-
-                    <label for="session">Nombre de sessions complétées</label>
-                    <input type="number" id="session" name="session" min="0" max="12" value="0">
-                </fieldset>
-
-                <fieldset>
-                    <legend>Ton activité</legend>
-
-                    <label for="activite">Activité choisie *</label>
-                    <select id="activite" name="activite" required>
-                        <option value="">-- Choisir une activité --</option>
-                        <option value="conference">Conférence : l'IA en éducation</option>
-                        <option value="atelier">Atelier CV et entrevue</option>
-                        <option value="soccer">Tournoi de soccer intérieur</option>
-                        <option value="culture">Soirée culturelle internationale</option>
-                        <option value="benevolat">Collecte de denrées (bénévolat)</option>
-                    </select>
-
-                    <p class="question">Tu participes comment ? *</p>
-                    <input type="radio" id="seul" name="participation" value="seul" required>
-                    <label for="seul" class="choix">Seul(e)</label>
-                    <input type="radio" id="groupe" name="participation" value="groupe">
-                    <label for="groupe" class="choix">Avec des amis</label>
-
-                    <p class="question">Tu veux recevoir :</p>
-                    <input type="checkbox" id="rappel" name="preferences" value="rappel">
-                    <label for="rappel" class="choix">Un rappel par courriel</label>
-                    <input type="checkbox" id="infolettre" name="preferences" value="infolettre">
-                    <label for="infolettre" class="choix">L'infolettre du Campus Hub</label>
-
-                    <label for="commentaire">Commentaire ou besoin particulier</label>
-                    <textarea id="commentaire" name="commentaire" rows="4" maxlength="300" placeholder="Allergies, accessibilité, questions..."></textarea>
-                </fieldset>
-
-                <button type="submit" class="btn primaire">M'inscrire</button>
-                <button type="reset" class="btn">Effacer</button>
-            </form>
         </section>
 
         <p class="retour"><a href="#catalogue">Retour en haut</a></p>
