@@ -4,39 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ajouter, modifier et supprimer les activités publiées sur Campus Hub.">
-    <title>Gestion des activités — Campus Hub</title>
+    <title>Gestion des activités – Campus Hub</title>
     <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <div class="header">
+    <header class="header">
         <h1>Bienvenue sur le site du Campus Hub</h1>
         <div class="card">
             <img src="images/CampusHub.jpeg" alt="logo campus">
-            </di>
-            <br>
-            <label><center>Recherche
-                <input type="text" placeholder="CampusHub"> </center>
-            </label>
         </div>
+    </header>
 
+    <nav class="navbar">
+        <a href="index.html">Accueil</a>
+        <a href="activite.html">Activites</a>
+        <a href="Catalogue d'activites.html">Catalogue</a>
+        <a href="inscription.html">Inscription</a>
+        <a href="gestion.html" class="active">Gestion</a>
+    </nav>
 
-        <div class="navbar">
-            <a href="index.html" class="active">Accueil</a>
-            <a href="activite.html">Activites</a>
-            <a href="Catalogue d'activites.html">Catalogue</a>
-            <a href="inscription.html">Inscription</a>
-            <a href="gestion.html">Gestion</a>
-        </div>
-        <div class="main">
-            <h2> Gestion a faire</h2>
+    <main class="main" id="catalogue">
+        <h2>Gestion des activités</h2>
+        <p>Ajoutez, modifiez ou supprimez les activités du site.</p>
 
-            
+        <p class="message-succes cache" id="message-gestion" role="status"></p>
 
-        <div class="footer">
-            <h3>Campus Hub</h3>
-            <p>Téléphone : 819 436-2661</p>
-        </div>
-  
+        <section class="page-formulaire" id="inscription">
+            <form id="form-activite" novalidate>
+                <fieldset>
+                    <legend id="titre-formulaire">Ajouter une activité</legend>
+
+                    <label for="titre">Titre</label>
+                    <input type="text" id="titre" aria-describedby="erreur-titre">
+                    <p class="erreur" id="erreur-titre"></p>
+
+                    <label for="categorie">Catégorie</label>
+                    <select id="categorie" aria-describedby="erreur-categorie">
+                        <option value="">Choisir une catégorie</option>
+                        <option>Conférence</option>
+                        <option>Atelier</option>
+                        <option>Sport</option>
+                        <option>Culture</option>
+                        <option>Séance d'étude</option>
+                        <option>Événement étudiant</option>
+                        <option>Vie associative</option>
+                    </select>
+                    <p class="erreur" id="erreur-categorie"></p>
+
+                    <label for="date">Date</label>
+                    <input type="date" id="date" aria-describedby="erreur-date">
+                    <p class="erreur" id="erreur-date"></p>
+
+                    <label for="heure">Heure</label>
+                    <input type="time" id="heure" aria-describedby="erreur-heure">
+                    <p class="erreur" id="erreur-heure"></p>
+
+                    <label for="lieu">Lieu</label>
+                    <input type="text" id="lieu" aria-describedby="erreur-lieu">
+                    <p class="erreur" id="erreur-lieu"></p>
+
+                    <label for="places">Nombre de places disponibles</label>
+                    <input type="number" id="places" min="0" step="1" aria-describedby="erreur-places">
+                    <p class="erreur" id="erreur-places"></p>
+
+                    <label for="image">Image (facultatif)</label>
+                    <input type="text" id="image" placeholder="images/mon-image.jpg">
+
+                    <label for="descriptionCourte">Courte description</label>
+                    <input type="text" id="descriptionCourte" maxlength="120" aria-describedby="erreur-descriptionCourte">
+                    <p class="erreur" id="erreur-descriptionCourte"></p>
+
+                    <label for="description">Description complète</label>
+                    <textarea id="description" rows="5" aria-describedby="erreur-description"></textarea>
+                    <p class="erreur" id="erreur-description"></p>
+                </fieldset>
+
+                <button class="btn primaire" id="bouton-enregistrer" type="submit">Ajouter l'activité</button>
+                <button class="btn cache" id="bouton-annuler" type="button">Annuler la modification</button>
+            </form>
+        </section>
+
+        <section id="resume">
+            <h3>Activités publiées</h3>
+            <table>
+                <caption>Liste des activités et des places disponibles</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Titre</th>
+                        <th scope="col" class="col-optionnelle">Catégorie</th>
+                        <th scope="col" class="col-optionnelle">Date</th>
+                        <th scope="col">Places</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="corps-tableau"></tbody>
+            </table>
+            <p class="cache" id="aucune-activite">Aucune activité publiée. Ajoutez-en une avec le formulaire.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h3>Campus Hub</h3>
+        <p>Téléphone : 819 436-2661</p>
+    </footer>
+
+    <script src="js/donnees.js"></script>
+    <script src="js/gestion.js"></script>
 </body>
 </html>
