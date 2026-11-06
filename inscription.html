@@ -1,43 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ajouter, modifier et supprimer les activités publiées sur Campus Hub.">
-    <title>Gestion des activités — Campus Hub</title>
+    <meta name="description" content="Inscrivez-vous à une activité étudiante sur Campus Hub.">
+    <title>Inscription à une activité – Campus Hub</title>
     <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <div class="header">
+    <header class="header">
         <h1>Bienvenue sur le site du Campus Hub</h1>
         <div class="card">
             <img src="images/CampusHub.jpeg" alt="logo campus">
-            </di>
-            <label><center>Recherche
-                <input type="text" placeholder="CampusHub"> </center>
-            </label>
         </div>
+    </header>
 
+    <nav class="navbar">
+        <a href="index.html">Accueil</a>
+        <a href="activite.html">Activites</a>
+        <a href="Catalogue d'activites.html">Catalogue</a>
+        <a href="inscription.html" class="active">Inscription</a>
+        <a href="gestion.html">Gestion</a>
+    </nav>
 
-        <div class="navbar">
-            <a href="index.html" class="active">Accueil</a>
-            <a href="activite.html">Activites</a>
-            <a href="Catalogue d'activites.html">Catalogue</a>
-            <a href="inscription.html">Inscription</a>
-            <a href="gestion.html">Gestion</a>
-        </div>
-        <div class="main">
-            <h2>INSCRIPTION a faire</h2>
-            
+    <main class="main" id="catalogue">
+        <h2>Inscription à une activité</h2>
+        <p>Remplissez le formulaire pour réserver votre place.</p>
 
-            
+        <p class="message-succes cache" id="confirmation" role="status" tabindex="-1"></p>
 
-        <div class="footer">
-            <h3>Campus Hub</h3>
-            <p>Téléphone : 819 436-2661</p>
-        </div>
-  
+        <section class="page-formulaire" id="inscription">
+            <form id="form-inscription" novalidate>
+                <fieldset>
+                    <legend>Vos coordonnées</legend>
+
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" autocomplete="given-name" aria-describedby="erreur-prenom">
+                    <p class="erreur" id="erreur-prenom"></p>
+
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" autocomplete="family-name" aria-describedby="erreur-nom">
+                    <p class="erreur" id="erreur-nom"></p>
+
+                    <label for="courriel">Courriel</label>
+                    <input type="email" id="courriel" autocomplete="email" placeholder="prenom.nom@exemple.ca" aria-describedby="erreur-courriel">
+                    <p class="erreur" id="erreur-courriel"></p>
+
+                    <label for="programme">Programme ou département</label>
+                    <select id="programme" aria-describedby="erreur-programme">
+                        <option value="">Choisir un programme</option>
+                        <option>Informatique</option>
+                        <option>Génie</option>
+                        <option>Sciences de la santé</option>
+                        <option>Sciences de l'éducation</option>
+                        <option>Administration</option>
+                        <option>Arts et lettres</option>
+                        <option>Sciences humaines</option>
+                        <option>Autre</option>
+                    </select>
+                    <p class="erreur" id="erreur-programme"></p>
+
+                    <p class="question">Niveau d'études</p>
+                    <label class="choix"><input type="radio" name="niveau" value="Certificat"> Certificat</label>
+                    <label class="choix"><input type="radio" name="niveau" value="Baccalauréat"> Baccalauréat</label>
+                    <label class="choix"><input type="radio" name="niveau" value="Cycles supérieurs"> Cycles supérieurs</label>
+                    <p class="erreur" id="erreur-niveau"></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Votre activité</legend>
+
+                    <label for="activite">Activité choisie</label>
+                    <select id="activite" aria-describedby="erreur-activite">
+                        <option value="">Choisir une activité</option>
+                    </select>
+                    <p class="erreur" id="erreur-activite"></p>
+
+                    <label for="commentaires">Commentaires (facultatif)</label>
+                    <textarea id="commentaires" rows="4" aria-describedby="erreur-commentaires"></textarea>
+                    <p class="erreur" id="erreur-commentaires"></p>
+
+                    <p class="question">Conditions</p>
+                    <label class="choix" for="conditions">
+                        <input type="checkbox" id="conditions" aria-describedby="erreur-conditions">
+                        J'accepte que mes coordonnées soient transmises aux organisateurs.
+                    </label>
+                    <p class="erreur" id="erreur-conditions"></p>
+                </fieldset>
+
+                <button class="btn primaire" type="submit">Confirmer mon inscription</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h3>Campus Hub</h3>
+        <p>Téléphone : 819 436-2661</p>
+    </footer>
+
+    <script src="js/donnees.js"></script>
+    <script src="js/inscription.js"></script>
 </body>
 </html>
