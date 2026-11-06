@@ -3,6 +3,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+   /* align-items: flex-end;*/
 }
 
 .navbar {
@@ -61,29 +62,34 @@ body {
     background: rgb(67, 45, 65);
 }
 /* accueil*/
-* { box-sizing: border-box; }
-
-body { 
-  font-family: Verdana, sans-serif; 
-  margin: 0; 
-  padding: 20px; 
-  background: #f5f5f5; 
-  /* Utilisation de flexbox pour pousser tout le contenu à droite */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+#img1, #img2 {
+    width: 90%;
+    height: 100%;
+    padding: auto;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.main2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-h1 { 
+h1  { 
   color: #333; 
   margin-bottom: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 /* Conteneur principal positionné à droite */
 .calendar-container {
   width: 100%;
   max-width: 600px; /* Taille maximale lisible */
+  margin-left: auto;    /* pousse l'élément vers la droite */
+  margin-right: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   border-radius: 8px;
   overflow: hidden;
