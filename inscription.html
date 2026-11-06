@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Inscrivez-vous à une activité étudiante sur Campus Hub.">
-    <title>Inscription à une activité – Campus Hub</title>
+    <title>Inscription – Campus Hub</title>
     <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -25,71 +25,68 @@
     </nav>
 
     <main class="main" id="catalogue">
-        <h2>Inscription à une activité</h2>
+        <h2>Inscription</h2>
         <p>Remplissez le formulaire pour réserver votre place.</p>
 
-        <p class="message-succes cache" id="confirmation" role="status" tabindex="-1"></p>
+        <p class="msg cache" id="msg"></p>
 
-        <section class="page-formulaire" id="inscription">
-            <form id="form-inscription" novalidate>
+        <section id="inscription">
+            <form>
                 <fieldset>
-                    <legend>Vos coordonnées</legend>
+                    <legend>Vos informations</legend>
 
                     <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom" autocomplete="given-name" aria-describedby="erreur-prenom">
-                    <p class="erreur" id="erreur-prenom"></p>
+                    <input type="text" id="prenom">
+                    <p class="erreur" id="err-prenom"></p>
 
                     <label for="nom">Nom</label>
-                    <input type="text" id="nom" autocomplete="family-name" aria-describedby="erreur-nom">
-                    <p class="erreur" id="erreur-nom"></p>
+                    <input type="text" id="nom">
+                    <p class="erreur" id="err-nom"></p>
 
                     <label for="courriel">Courriel</label>
-                    <input type="email" id="courriel" autocomplete="email" placeholder="prenom.nom@exemple.ca" aria-describedby="erreur-courriel">
-                    <p class="erreur" id="erreur-courriel"></p>
+                    <input type="email" id="courriel" placeholder="exemple@uqtr.ca">
+                    <p class="erreur" id="err-courriel"></p>
 
-                    <label for="programme">Programme ou département</label>
-                    <select id="programme" aria-describedby="erreur-programme">
-                        <option value="">Choisir un programme</option>
+                    <label for="programme">Programme</label>
+                    <select id="programme">
+                        <option value="">-- Choisir --</option>
                         <option>Informatique</option>
                         <option>Génie</option>
                         <option>Sciences de la santé</option>
-                        <option>Sciences de l'éducation</option>
+                        <option>Éducation</option>
                         <option>Administration</option>
                         <option>Arts et lettres</option>
-                        <option>Sciences humaines</option>
                         <option>Autre</option>
                     </select>
-                    <p class="erreur" id="erreur-programme"></p>
+                    <p class="erreur" id="err-programme"></p>
 
-                    <p class="question">Niveau d'études</p>
-                    <label class="choix"><input type="radio" name="niveau" value="Certificat"> Certificat</label>
-                    <label class="choix"><input type="radio" name="niveau" value="Baccalauréat"> Baccalauréat</label>
-                    <label class="choix"><input type="radio" name="niveau" value="Cycles supérieurs"> Cycles supérieurs</label>
-                    <p class="erreur" id="erreur-niveau"></p>
+                    <p class="question">Niveau</p>
+                    <input type="radio" name="niveau" id="niv1" value="Certificat">
+                    <label class="choix" for="niv1">Certificat</label>
+                    <input type="radio" name="niveau" id="niv2" value="Baccalauréat">
+                    <label class="choix" for="niv2">Baccalauréat</label>
+                    <input type="radio" name="niveau" id="niv3" value="Maîtrise">
+                    <label class="choix" for="niv3">Maîtrise</label>
+                    <p class="erreur" id="err-niveau"></p>
                 </fieldset>
 
                 <fieldset>
-                    <legend>Votre activité</legend>
+                    <legend>Activité</legend>
 
                     <label for="activite">Activité choisie</label>
-                    <select id="activite" aria-describedby="erreur-activite">
-                        <option value="">Choisir une activité</option>
-                    </select>
-                    <p class="erreur" id="erreur-activite"></p>
+                    <select id="activite"></select>
+                    <p class="erreur" id="err-activite"></p>
 
-                    <label for="commentaires">Commentaires (facultatif)</label>
-                    <textarea id="commentaires" rows="4" aria-describedby="erreur-commentaires"></textarea>
-                    <p class="erreur" id="erreur-commentaires"></p>
+                    <label for="commentaire">Commentaire (optionnel)</label>
+                    <textarea id="commentaire" rows="4"></textarea>
+                    <p class="erreur" id="err-commentaire"></p>
 
-                    <p class="question">Conditions</p>
-                    <label class="choix" for="conditions">
-                        <input type="checkbox" id="conditions" aria-describedby="erreur-conditions">
-                        J'accepte que mes coordonnées soient transmises aux organisateurs.
-                    </label>
-                    <p class="erreur" id="erreur-conditions"></p>
+                    <input type="checkbox" id="conditions">
+                    <label class="choix" for="conditions">J'accepte les conditions</label>
+                    <p class="erreur" id="err-conditions"></p>
                 </fieldset>
 
-                <button class="btn primaire" type="submit">Confirmer mon inscription</button>
+                <button type="button" class="btn primaire" id="btnInscrire">S'inscrire</button>
             </form>
         </section>
     </main>
