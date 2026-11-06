@@ -34,63 +34,70 @@
 
         <p class="msg cache" id="msg"></p>
 
+        <!-- Formulaire d'inscription -->
         <section id="inscription">
-            <form>
+            <h3>Inscription à une activité</h3>
+            <p>Les champs avec une * sont obligatoires.</p>
+
+            <form action="#inscription" method="post">
+
                 <fieldset>
-                    <legend>Vos informations</legend>
+                    <legend>Tes informations</legend>
 
-                    <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom">
-                    <p class="erreur" id="err-prenom"></p>
+                    <label for="nom">Nom *</label>
+                    <input type="text" id="nom" name="nom" placeholder="Ex. : Tremblay" maxlength="40" required>
 
-                    <label for="nom">Nom</label>
-                    <input type="text" id="nom">
-                    <p class="erreur" id="err-nom"></p>
+                    <label for="prenom">Prénom *</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Ex. : Awa" maxlength="40" required>
 
-                    <label for="courriel">Courriel</label>
-                    <input type="email" id="courriel" placeholder="exemple@uqtr.ca">
-                    <p class="erreur" id="err-courriel"></p>
+                    <label for="courriel">Courriel *</label>
+                    <input type="email" id="courriel" name="courriel" placeholder="prenom.nom@uqtr.ca" required>
 
-                    <label for="programme">Programme</label>
-                    <select id="programme">
+                    <label for="programme">Programme d'études</label>
+                    <select id="programme" name="programme">
                         <option value="">-- Choisir --</option>
-                        <option>Informatique</option>
-                        <option>Génie</option>
-                        <option>Sciences de la santé</option>
-                        <option>Éducation</option>
-                        <option>Administration</option>
-                        <option>Arts et lettres</option>
-                        <option>Autre</option>
+                        <option value="informatique">Informatique</option>
+                        <option value="genie">Génie</option>
+                        <option value="administration">Administration</option>
+                        <option value="sciences">Sciences de la santé</option>
+                        <option value="autre">Autre</option>
                     </select>
-                    <p class="erreur" id="err-programme"></p>
 
-                    <p class="question">Niveau</p>
-                    <input type="radio" name="niveau" id="niv1" value="Certificat">
-                    <label class="choix" for="niv1">Certificat</label>
-                    <input type="radio" name="niveau" id="niv2" value="Baccalauréat">
-                    <label class="choix" for="niv2">Baccalauréat</label>
-                    <input type="radio" name="niveau" id="niv3" value="Maîtrise">
-                    <label class="choix" for="niv3">Maîtrise</label>
-                    <p class="erreur" id="err-niveau"></p>
+                    <label for="session">Nombre de sessions complétées</label>
+                    <input type="number" id="session" name="session" min="0" max="12" value="0">
                 </fieldset>
 
                 <fieldset>
-                    <legend>Activité</legend>
+                    <legend>Ton activité</legend>
 
-                    <label for="activite">Activité choisie</label>
-                    <select id="activite"></select>
-                    <p class="erreur" id="err-activite"></p>
+                    <label for="activite">Activité choisie *</label>
+                    <select id="activite" name="activite" required>
+                        <option value="">-- Choisir une activité --</option>
+                        <option value="conference">Conférence : l'IA en éducation</option>
+                        <option value="atelier">Atelier CV et entrevue</option>
+                        <option value="soccer">Tournoi de soccer intérieur</option>
+                        <option value="culture">Soirée culturelle internationale</option>
+                        <option value="benevolat">Collecte de denrées (bénévolat)</option>
+                    </select>
 
-                    <label for="commentaire">Commentaire (optionnel)</label>
-                    <textarea id="commentaire" rows="4"></textarea>
-                    <p class="erreur" id="err-commentaire"></p>
+                    <p class="question">Tu participes comment ? *</p>
+                    <input type="radio" id="seul" name="participation" value="seul" required>
+                    <label for="seul" class="choix">Seul(e)</label>
+                    <input type="radio" id="groupe" name="participation" value="groupe">
+                    <label for="groupe" class="choix">Avec des amis</label>
 
-                    <input type="checkbox" id="conditions">
-                    <label class="choix" for="conditions">J'accepte les conditions</label>
-                    <p class="erreur" id="err-conditions"></p>
+                    <p class="question">Tu veux recevoir :</p>
+                    <input type="checkbox" id="rappel" name="preferences" value="rappel">
+                    <label for="rappel" class="choix">Un rappel par courriel</label>
+                    <input type="checkbox" id="infolettre" name="preferences" value="infolettre">
+                    <label for="infolettre" class="choix">L'infolettre du Campus Hub</label>
+
+                    <label for="commentaire">Commentaire ou besoin particulier</label>
+                    <textarea id="commentaire" name="commentaire" rows="4" maxlength="300" placeholder="Allergies, accessibilité, questions..."></textarea>
                 </fieldset>
 
-                <button type="button" class="btn primaire" id="btnInscrire">S'inscrire</button>
+                <button type="submit" class="btn primaire">M'inscrire</button>
+                <button type="reset" class="btn">Effacer</button>
             </form>
         </section>
     </main>
