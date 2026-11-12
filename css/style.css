@@ -3,29 +3,62 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-   /* align-items: flex-end;*/
+    min-height: 100vh;
 }
 
-.navbar {
-    overflow: hidden;
-    background-color: #339;
+/* En-tête et navigation */
+.entete-site {
     position: sticky;
-    position: -webkit-sticky;
     top: 0;
+    z-index: 50;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #ddd;
+    backdrop-filter: blur(8px);
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+}
+
+.card img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.card input[type="text"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #339;
+}
+
+.navbar li {
+    flex: 1;
 }
 
 .navbar a {
-    float: left;
     display: block;
     color: white;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
-
+    transition: background-color 0.2s;
 }
-.navbar a.active{
+
+.navbar a.active {
     background-color: rgb(59, 59, 59);
-    color: white;    
 }
 
 .navbar a:hover {
@@ -33,143 +66,199 @@ body {
     color: black;
 }
 
-.header {
-    display: block;
-    padding: 80px;
-    text-align: center;
-    background: rgb(11, 239, 212);
-    color: white;
-}
-
-.card {
-    display: block;
-    padding: 5px;
-    margin: 5px;
-}
-
-.card img {
-    width: 10%;
-    height: auto;
-    padding: 10px;
-}
-
-
-.footer{  
-   display: block;
-    width: 100%;    
-    margin: 0;
+/* Contenu principal (Accueil) */
+main {
+    flex: 1;
     padding: 20px;
-    background: rgb(67, 45, 65);
 }
-/* accueil*/
-#img1, #img2 {
-    width: 90%;
-    height: 100%;
-    padding: auto;
-}
-.main{
+
+.main {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap; /* Permet de passer en colonne sur les petits écrans */
 }
+
 .main2 {
+    flex: 1;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-h1  { 
-  color: #333; 
-  margin-bottom: 20px;
-  text-align: center;
+h1 { 
+    color: #333; 
+    margin: 15px 0;
+    text-align: center;
 }
 
-/* Conteneur principal positionné à droite */
+/* Images de la section infos */
+#img1, #img2 {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* Section "À propos" */
+.site-description {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #1abc9c;
+}
+
+/* Calendrier */
 .calendar-container {
-  width: 100%;
-  max-width: 600px; /* Taille maximale lisible */
-  margin-left: auto;    /* pousse l'élément vers la droite */
-  margin-right: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  overflow: hidden;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
 }
 
-/* En-tête du mois */
 .month {
-  padding: 30px 25px;
-  background: #1abc9c;
-  text-align: center;
-  color: white;
-}
-.month ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.month li {
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-.month .prev, .month .next {
-  cursor: pointer;
-  padding: 10px 15px;
-  border-radius: 4px;
-  transition: background 0.2s;
-  user-select: none;
-}
-.month .prev:hover, .month .next:hover {
-  background: rgba(255, 255, 255, 0.2);
+    padding: 20px 25px;
+    background: #1abc9c;
+    text-align: center;
+    color: white;
 }
 
-/* Structure de la grille */
+.month ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.month li {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.month .prev, .month .next {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    user-select: none;
+}
+
+.month .prev:hover, .month .next:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 .weekdays, .days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  text-align: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .weekdays {
-  background-color: #ddd;
-  padding: 12px 0;
-  font-weight: bold;
-  color: #666;
+    background-color: #ddd;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #666;
 }
 
 .days {
-  background: #eee;
-  padding: 15px 0;
+    background: #eee;
+    padding: 10px 0;
 }
+
 .days li {
-  padding: 15px 0;
-  font-size: 14px;
-  color: #777;
-  cursor: pointer;
-  transition: all 0.2s;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #777;
+    cursor: pointer;
+    transition: all 0.2s;
 }
+
 .days li:hover:not(.empty) {
-  background: #e0e0e0;
-  border-radius: 4px;
+    background: #e0e0e0;
+    border-radius: 4px;
 }
 
-/* Style pour le jour actuel */
 .days li.active {
-  background: #1abc9c !important;
-  color: white !important;
-  font-weight: bold;
-  border-radius: 4px;
+    background: #1abc9c !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 4px;
 }
 
-/* Case vide pour aligner le 1er du mois */
 .days li.empty {
-  cursor: default;
+    cursor: default;
+}
+
+/* Pied de page (Footer) */
+footer { 
+    background-color: #0f172a;
+    color: #cbd5e1;
+    margin-top: auto;
+}
+
+.pied-site {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    padding: 3rem 2rem 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pied_site img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.pied-nav-titre ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pied-nav-titre li {
+    margin-bottom: 8px;
+}
+
+.pied-nav-titre a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.pied-nav-titre a:hover {
+    color: #ffffff;
+}
+
+.pied-site_3 {
+    text-align: center;
+    padding: 15px;
+    background-color: #090d16;
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* Responsive pour les écrans plus petits (tablettes / mobiles) */
+@media (max-width: 768px) {
+    .pied-site {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+    }
 }
 /* Page Catalogue d'activites, tout est place sous #catalogue pour ne pas changer les autres pages */
 /* fond blanc pour que le texte reste lisible meme si le navigateur est en mode sombre */

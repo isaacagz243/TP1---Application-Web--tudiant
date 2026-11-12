@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr-CA">
+
 <head>
-    <title>activités — Campus Hub</title>
-    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <meta charset="UTF-8">
+    <meta name="description" content="Campus Hub : découvrez et inscrivez-vous aux activités de votre communauté universitaire.">
+    <title>Campus Hub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-    <!-- En-tete du site -->
-    <header class="header">
+    <header class="entete-site">
         <h1>Bienvenue sur le site du Campus Hub</h1>
         <div class="card">
-            <img src="images/CampusHub.jpeg" alt="Logo du Campus Hub">
-            <br>
+            <img src="images/CampusHub.jpeg" alt="Logo de Campus Hub" width="40" height="40">
+            
             <label for="recherche">Recherche</label>
-            <input type="text" id="recherche" placeholder="CampusHub">
+            <input type="text" id="recherche" placeholder="Rechercher...">
+        </div>
+
+        <div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="activites.html">Activités</a></li>
+                    <li><a href="inscription.html">Inscription</a></li>
+                    <li><a href="gestion.html">Gestion</a></li>
+                </ul>
+            </nav> 
         </div>
     </header>
-
-    <!-- Menu de navigation -->
-    <nav class="navbar">
-        <a href="index.html">Accueil</a>
-        <a href="activites.html" class="active">Activites</a>
-        <a href="inscription.html">Inscription</a>
-        <a href="gestion.html">Gestion</a>
-    </nav>
 
     <main id="catalogue">
 
@@ -156,11 +161,40 @@
         <p class="retour"><a href="#catalogue">Retour en haut</a></p>
     </main>
 
-    <!-- Pied de page -->
-    <footer class="footer">
-        <h3>Campus Hub</h3>
-        <p>Téléphone : +1 819 436 2661</p>
+ <footer>
+        <div class="conteneur pied-site">
+            <section class="pied_site">
+                <img src="images/CampusHub.jpeg" alt="Logo Campus Hub" width="40" height="40">
+                Campus<span>Hub</span>
+                <p>La plateforme qui rassemble toutes les activités de la communauté universitaire : conférences, ateliers, sports, culture et plus encore.</p>
+            </section>
+
+            <nav class="pied-nav-titre">
+                <h2 id="pied-nav-titre">Navigation</h2>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="activites.html">Catalogue des activités</a></li>
+                    <li><a href="inscription.html">S'inscrire à une activité</a></li>
+                    <li><a href="gestion.html">Gérer les activités</a></li>
+                </ul>
+            </nav>
+
+            <section>
+                <h2>Contact</h2>
+                <address>
+                    Trois-Rivières<br>
+                    Téléphone : 819 436-2661<br>
+                </address>
+            </section>
+        </div>
+
+        <div class="pied-site_3">
+            <p>&copy; 2026 Campus Hub</p>
+        </div>
     </footer>
 
+    <script src="js/index.js"></script>
+
 </body>
+
 </html>

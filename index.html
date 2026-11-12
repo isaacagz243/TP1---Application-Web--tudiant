@@ -3,91 +3,118 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description"
-        content="Campus Hub : découvrez et inscrivez-vous aux activités de votre communauté universitaire.">
-    <title> Campus Hub </title>
-
+    <meta name="description" content="Campus Hub : découvrez et inscrivez-vous aux activités de votre communauté universitaire.">
+    <title>Campus Hub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-
-    <div class="header">
+    <header class="entete-site">
         <h1>Bienvenue sur le site du Campus Hub</h1>
         <div class="card">
-            <img src="images/CampusHub.jpeg" alt="logo campus">
-            </di>
-            <br>
-            <label><center>Recherche
-                <input type="text" placeholder="CampusHub"> </center>
-            </label>
+            <img src="images/CampusHub.jpeg" alt="Logo de Campus Hub" width="40" height="40">
+            
+            <label for="recherche">Recherche</label>
+            <input type="text" id="recherche" placeholder="Rechercher...">
         </div>
 
-
-        <div class="navbar">
-            <a href="index.html" class="active">Accueil</a>
-            <a href="activites.html">Activites</a>
-            <a href="inscription.html">Inscription</a>
-            <a href="gestion.html">Gestion</a>
+        <div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="activites.html">Activités</a></li>
+                    <li><a href="inscription.html">Inscription</a></li>
+                    <li><a href="gestion.html">Gestion</a></li>
+                </ul>
+            </nav> 
         </div>
+    </header>
+    
+    <main>
         <div class="main">
 
             <div class="main2">   
-                <h2>INFOS A SAVOIR </h2>
-                <img id="img1" src="images/porteouverte.jpg" alt="https://www.uqtr.ca/portes-ouvertes/index.shtml">
+                <h2>INFOS À SAVOIR</h2>
+                <img id="img1" src="images/porteouverte.jpg" alt="Portes ouvertes à l'université">
                 <p>Bien plus qu’une visite de campus, c’est le moment idéal pour explorer nos programmes, 
                     rencontrer la communauté professorale et étudiante et en apprendre davantage sur les 
                     nombreux services offerts grâce à nos kiosques d’information.</p>
-                <img id="img2" src="images/jpo-uqtr-foule.jpg" alt="https://neo.uqtr.ca/2026/01/20/luqtr-prete-a-accueillir-des-centaines-de-visiteurs-pour-sa-traditionnelle-journee-portes-ouvertes/">
-                <p>L 24 janvier, de 10 h à 15 h, l’Université du Québec à Trois-Rivières (UQTR) tiendra 
+                <img id="img2" src="images/jpo-uqtr-foule.jpg" alt="Foule lors de la journée portes ouvertes de l'UQTR">
+                <p>Le 24 janvier, de 10 h à 15 h, l’Université du Québec à Trois-Rivières (UQTR) tiendra 
                     sa traditionnelle et populaire journée portes ouvertes, où des centaines de futurs
                     étudiants et leurs proches viendront découvrir tout ce que le campus trifluvien a à offrir. Les visiteurs pourront même remplir une demande d’admission sur place, tout à fait gratuitement.</p>
             </div>
-                 
 
-                <div class="calendar-container">
-                    <h3>Calendrier</h3>
-                    <div class="month">      
-                        <ul>
-                        <li class="prev" id="prevBtn">❮</li>
+            <div class="calendar-container">
+                <h3>Calendrier</h3>
+                <div class="month">      
+                    <ul>
+                        <li class="prev" id="prevBtn">&lt;</li>
                         <li>
                             <span id="monthName">Août</span><br>
                             <span id="yearName" style="font-size:18px">2021</span>
                         </li>
-                        <li class="next" id="nextBtn">❯</li>
-                        </ul>
-                    </div>
-
-                    <ul class="weekdays">
-                        <li>Lu</li>
-                        <li>Ma</li>
-                        <li>Me</li>
-                        <li>Je</li>
-                        <li>Ve</li>
-                        <li>Sa</li>
-                        <li>Di</li>
+                        <li class="next" id="nextBtn">&gt;</li>
                     </ul>
+                </div>
 
-                    <ul class="days" id="daysContainer">  
-                        <!-- Les jours seront injectés dynamiquement ici par le JavaScript -->
-                    </ul>
-                    </div>
+                <ul class="weekdays">
+                    <li>Lu</li>
+                    <li>Ma</li>
+                    <li>Me</li>
+                    <li>Je</li>
+                    <li>Ve</li>
+                    <li>Sa</li>
+                    <li>Di</li>
+                </ul>
+
+                <ul class="days" id="daysContainer">  
+                    <!-- Les jours seront injectés dynamiquement ici par le JavaScript -->
+                </ul>
+            </div>
             
         </div>
-            <h5>Description, Oct 22, 2026</h5>
 
-            <p>Ce site est destine a promouvoir les activites de la communcate universitaire </p>
-        <div class="footer">
-            <h3>Campus Hub</h3>
-            <p>Téléphone : 819 436-2661</p>
+        <section class="site-description">
+            <h2>À propos</h2>
+            <p>Ce site est destiné à promouvoir les activités de la communauté universitaire.</p>
+        </section>
+    </main>   
+    
+    <footer>
+        <div class="conteneur pied-site">
+            <section class="pied_site">
+                <img src="images/CampusHub.jpeg" alt="Logo Campus Hub" width="40" height="40">
+                Campus<span>Hub</span>
+                <p>La plateforme qui rassemble toutes les activités de la communauté universitaire : conférences, ateliers, sports, culture et plus encore.</p>
+            </section>
+
+            <nav class="pied-nav-titre">
+                <h2 id="pied-nav-titre">Navigation</h2>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="activites.html">Catalogue des activités</a></li>
+                    <li><a href="inscription.html">S'inscrire à une activité</a></li>
+                    <li><a href="gestion.html">Gérer les activités</a></li>
+                </ul>
+            </nav>
+
+            <section>
+                <h2>Contact</h2>
+                <address>
+                    Trois-Rivières<br>
+                    Téléphone : 819 436-2661<br>
+                </address>
+            </section>
         </div>
 
+        <div class="pied-site_3">
+            <p>&copy; 2026 Campus Hub</p>
+        </div>
+    </footer>
 
-
-
-
-<script src="js/index.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
 
