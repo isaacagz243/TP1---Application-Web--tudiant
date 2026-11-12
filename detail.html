@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Détail d'une activité étudiante du Campus Hub.">
+    <title>Détail — Campus Hub</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Bienvenue sur le site du Campus Hub</h1>
+        <div class="card">
+            <img src="images/CampusHub.jpeg" alt="Logo du Campus Hub">
+            <br>
+            <label for="recherche">Recherche</label>
+            <input type="text" id="recherche" placeholder="CampusHub">
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html">Accueil</a>
+        <a href="activites.html" class="active">Activites</a>
+        <a href="inscription.html">Inscription</a>
+        <a href="gestion.html">Gestion</a>
+    </nav>
+
+    <main id="catalogue">
+        <h2>Détail de l'activité</h2>
+        <p>Voici les informations de l'activité choisie.</p>
+
+        <article class="fiche" id="fiche" hidden></article>
+
+        <p id="fiche-vide" hidden>
+            Cette activité est introuvable.
+            <a href="activites.html">Retour au catalogue</a>
+        </p>
+    </main>
+
+    <footer class="footer">
+        <h3>Campus Hub</h3>
+        <p>Téléphone : +1 819 436 2661</p>
+    </footer>
+
+    <script src="js/detail.js"></script>
+</body>
+</html>
 
