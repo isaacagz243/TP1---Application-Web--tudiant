@@ -127,6 +127,13 @@
         <p>Téléphone : 819 436-2661</p>
     </footer>
 
+    <script>
+        const activiteDemandee = new URLSearchParams(window.location.search).get("activite");
+        const listeActivites = document.getElementById("activite");
+        if (activiteDemandee && listeActivites) {
+            listeActivites.value = activiteDemandee;
+        }
+    </script>
     <script src="js/donnees.js"></script>
     <script src="js/inscription.js"></script>
 </body>
