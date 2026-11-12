@@ -146,4 +146,14 @@ function verifierFormulaire() {
 
     return valide;
 }
+function prochainId() {
+    let plusGrand = 0;
 
+    for (let i = 0; i < activites.length; i++) {
+        if (activites[i].id > plusGrand) {
+            plusGrand = activites[i].id;
+        }
+    }
+
+    return plusGrand + 1;
+}
