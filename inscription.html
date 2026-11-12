@@ -9,17 +9,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-     <div class="header">
+    <header class="header entete-simple">
+        <img class="logo-entete" src="images/CampusHub.jpeg" alt="Logo du Campus Hub">
         <h1>Bienvenue sur le site du Campus Hub</h1>
-        <div class="card">
-            <img src="images/CampusHub.jpeg" alt="logo campus">
-            </di>
-            <br>
-            <label><center>Recherche
-                <input type="text" placeholder="CampusHub"> </center>
-            </label>
+        <div class="entete-recherche">
+            <label for="recherche">Recherche</label>
+            <input type="text" id="recherche" placeholder="CampusHub">
         </div>
-
+    </header>
 
     <nav class="navbar">
         <a href="index.html">Accueil</a>
@@ -28,13 +25,12 @@
         <a href="gestion.html">Gestion</a>
     </nav>
 
-    <main class="main" id="catalogue">
+    <main id="catalogue" class="page-inscription">
         <h2>Inscription</h2>
         <p>Remplissez le formulaire pour réserver votre place.</p>
 
         <p class="msg cache" id="msg"></p>
 
-        <!-- Formulaire d'inscription -->
         <section id="inscription">
             <h3>Inscription à une activité</h3>
             <p>Les champs avec une * sont obligatoires.</p>
@@ -44,27 +40,37 @@
                 <fieldset>
                     <legend>Tes informations</legend>
 
-                    <label for="nom">Nom *</label>
-                    <input type="text" id="nom" name="nom" placeholder="Ex. : Tremblay" maxlength="40" required>
-
-                    <label for="prenom">Prénom *</label>
-                    <input type="text" id="prenom" name="prenom" placeholder="Ex. : Awa" maxlength="40" required>
+                    <div class="champs-ligne">
+                        <div>
+                            <label for="nom">Nom *</label>
+                            <input type="text" id="nom" name="nom" placeholder="Ex. : Tremblay" maxlength="40" required>
+                        </div>
+                        <div>
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" id="prenom" name="prenom" placeholder="Ex. : Awa" maxlength="40" required>
+                        </div>
+                    </div>
 
                     <label for="courriel">Courriel *</label>
                     <input type="email" id="courriel" name="courriel" placeholder="prenom.nom@uqtr.ca" required>
 
-                    <label for="programme">Programme d'études</label>
-                    <select id="programme" name="programme">
-                        <option value="">-- Choisir --</option>
-                        <option value="informatique">Informatique</option>
-                        <option value="genie">Génie</option>
-                        <option value="administration">Administration</option>
-                        <option value="sciences">Sciences de la santé</option>
-                        <option value="autre">Autre</option>
-                    </select>
-
-                    <label for="session">Nombre de sessions complétées</label>
-                    <input type="number" id="session" name="session" min="0" max="12" value="0">
+                    <div class="champs-ligne">
+                        <div>
+                            <label for="programme">Programme d'études</label>
+                            <select id="programme" name="programme">
+                                <option value="">-- Choisir --</option>
+                                <option value="informatique">Informatique</option>
+                                <option value="genie">Génie</option>
+                                <option value="administration">Administration</option>
+                                <option value="sciences">Sciences de la santé</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="session">Nombre de sessions complétées</label>
+                            <input type="number" id="session" name="session" min="0" max="12" value="0">
+                        </div>
+                    </div>
                 </fieldset>
 
                 <fieldset>
@@ -81,23 +87,37 @@
                     </select>
 
                     <p class="question">Tu participes comment ? *</p>
-                    <input type="radio" id="seul" name="participation" value="seul" required>
-                    <label for="seul" class="choix">Seul(e)</label>
-                    <input type="radio" id="groupe" name="participation" value="groupe">
-                    <label for="groupe" class="choix">Avec des amis</label>
+                    <div class="choix-groupe">
+                        <span>
+                            <input type="radio" id="seul" name="participation" value="seul" required>
+                            <label for="seul" class="choix">Seul(e)</label>
+                        </span>
+                        <span>
+                            <input type="radio" id="groupe" name="participation" value="groupe">
+                            <label for="groupe" class="choix">Avec des amis</label>
+                        </span>
+                    </div>
 
                     <p class="question">Tu veux recevoir :</p>
-                    <input type="checkbox" id="rappel" name="preferences" value="rappel">
-                    <label for="rappel" class="choix">Un rappel par courriel</label>
-                    <input type="checkbox" id="infolettre" name="preferences" value="infolettre">
-                    <label for="infolettre" class="choix">L'infolettre du Campus Hub</label>
+                    <div class="choix-groupe">
+                        <span>
+                            <input type="checkbox" id="rappel" name="preferences" value="rappel">
+                            <label for="rappel" class="choix">Un rappel par courriel</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" id="infolettre" name="preferences" value="infolettre">
+                            <label for="infolettre" class="choix">L'infolettre du Campus Hub</label>
+                        </span>
+                    </div>
 
                     <label for="commentaire">Commentaire ou besoin particulier</label>
                     <textarea id="commentaire" name="commentaire" rows="4" maxlength="300" placeholder="Allergies, accessibilité, questions..."></textarea>
                 </fieldset>
 
-                <button type="submit" class="btn primaire">M'inscrire</button>
-                <button type="reset" class="btn">Effacer</button>
+                <div class="actions-form">
+                    <button type="submit" class="btn primaire">M'inscrire</button>
+                    <button type="reset" class="btn">Effacer</button>
+                </div>
             </form>
         </section>
     </main>
