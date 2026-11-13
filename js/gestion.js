@@ -157,3 +157,149 @@ function prochainId() {
 
     return plusGrand + 1;
 }
+function afficherActivites() {
+    lignes.innerHTML = "";
+
+    if (activites.length === 0) {
+        texteVide.classList.remove("cache");
+    } else {
+        texteVide.classList.add("cache");
+    }
+
+    for (let i = 0; i < activites.length; i++) {
+        const ligne = document.createElement("tr");
+
+        const celluleTitre = document.createElement("td");
+        celluleTitre.textContent = activites[i].titre;
+
+        const celluleCategorie = document.createElement("td");
+        celluleCategorie.textContent = activites[i].categorie;
+        celluleCategorie.classList.add("mobile-cache");
+
+        const celluleDate = document.createElement("td");
+        celluleDate.textContent = activites[i].date;
+        celluleDate.classList.add("mobile-cache");
+
+        const cellulePlaces = document.createElement("td");
+        cellulePlaces.textContent = activites[i].places;
+
+        const celluleActions = document.createElement("td");
+
+        const boutonModifier = document.createElement("button");
+        boutonModifier.textContent = "Modifier";
+        boutonModifier.classList.add("btn");
+        boutonModifier.type = "button";
+
+        boutonModifier.addEventListener("click", function () {
+            modifierActivite(i);
+        });
+
+        const boutonSupprimer = document.createElement("button");
+        boutonSupprimer.textContent = "Supprimer";
+        boutonSupprimer.classList.add("btn");
+        boutonSupprimer.type = "button";
+
+        boutonSupprimer.addEventListener("click", function () {
+            supprimerActivite(i);
+        });
+
+        celluleActions.appendChild(boutonModifier);
+        celluleActions.appendChild(boutonSupprimer);
+
+        ligne.appendChild(celluleTitre);
+        ligne.appendChild(celluleCategorie);
+        ligne.appendChild(celluleDate);
+        ligne.appendChild(cellulePlaces);
+        ligne.appendChild(celluleActions);
+
+        lignes.appendChild(ligne);
+    }
+}
+
+function viderFormulaire() {
+    formulaire.reset();
+    effacerErreurs();
+
+    indiceModification = -1;
+
+    titreForm.textContent = "Ajouter une activite";
+    boutonAjouter.textContent = "Ajouter";
+    boutonAnnuler.classList.add("cache");
+}
+
+function ajouterActivite() {
+    if (verifierFormulaire() === false) {
+        afficherMessage("Verifie les champs en rouge avant de continuer.");
+        return;
+    }
+
+    const nouvelleActivite = {
+        id: prochainId(),
+        titre: titre.value.trim(),
+        categorie: categorie.value,
+        date: date.value,
+        heure: heure.value,
+        lieu: lieu.value.trim(),
+        places: Number(places.value),
+        image: image.value.trim(),
+        resume: resume.value.trim(),
+        description: description.value.trim()
+    };
+
+    if (indiceModification === -1) {
+        activites.push(nouvelleActivite);
+        afficherMessage("L'activite a ete ajoutee.");
+    } else {
+        nouvelleActivite.id = activites[indiceModification].id;
+        activites[indiceModification] = nouvelleActivite;
+        afficherMessage("L'activite a ete modifiee.");
+    }
+
+    sauvegarderActivites();
+    afficherActivites();
+    viderFormulaire();
+}
+
+function modifierActivite(indice) {
+    indiceModification = indice;
+
+    titre.value = activites[indice].titre;
+    categorie.value = activites[indice].categorie;
+    date.value = activites[indice].date;
+    heure.value = activites[indice].heure;
+    lieu.value = activites[indice].lieu;
+    places.value = activites[indice].places;
+    image.value = activites[indice].image;
+    resume.value = activites[indice].resume;
+    description.value = activites[indice].description;
+
+    titreForm.textContent = "Modifier une activite";
+    boutonAjouter.textContent = "Enregistrer les changements";
+    boutonAnnuler.classList.remove("cache");
+
+    afficherMessage("Tu peux maintenant modifier les informations.");
+}
+
+function supprimerActivite(indice) {
+    const confirmation = confirm("Veux-tu vraiment supprimer cette activite ?");
+
+    if (confirmation === true) {
+        activites.splice(indice, 1);
+
+        sauvegarderActivites();
+        afficherActivites();
+        viderFormulaire();
+
+        afficherMessage("L'activite a ete supprimee.");
+    }
+}
+
+boutonAjouter.addEventListener("click", ajouterActivite);
+
+boutonAnnuler.addEventListener("click", function () {
+    viderFormulaire();
+    afficherMessage("La modification a ete annulee.");
+});
+
+sauvegarderActivites();
+afficherActivites();
