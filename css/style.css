@@ -103,13 +103,7 @@ h1 {
     margin: 10px 0;
 }
 
-/* Section "À propos" */
-.site-description {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-left: 4px solid #1abc9c;
-}
+
 
 /* Calendrier */
 .calendar-container {
